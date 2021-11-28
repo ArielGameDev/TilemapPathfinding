@@ -481,6 +481,15 @@ MonoBehaviour:
   maxIterations: 1000
   targetInWorld: {x: 0, y: 0, z: 0}
   targetInGrid: {x: 0, y: 0, z: 0}
+  tileDescriptors:
+  - tile: {fileID: 11400000, guid: 0cea26e1a47ac8d46850becac1a6c757, type: 2}
+    moveSpeed: 0.75
+  - tile: {fileID: 11400000, guid: 149fb7c95775bc842bc8f54055585274, type: 2}
+    moveSpeed: 1
+  - tile: {fileID: 11400000, guid: 2ad1759387b28444892c8549e6122652, type: 2}
+    moveSpeed: 0.5
+  - tile: {fileID: 11400000, guid: 8f2cab6dea1a2d147b231cc92eb1f7e2, type: 2}
+    moveSpeed: 0.25
 --- !u!114 &790962206
 MonoBehaviour:
   m_ObjectHideFlags: 0
