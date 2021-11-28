@@ -24,6 +24,11 @@ public class TargetMover_AStar : MonoBehaviour
     [Tooltip("The target position in grid coordinates")]
     [SerializeField] Vector3Int targetInGrid;
 
+    [SerializeField]
+    List<TileDescriptor> tileDescriptors;
+
+    Node m_nextNode;
+
     protected bool atTarget;  // This property is set to "true" whenever the object has already found the target.
 
     public void SetTarget(Vector3 newTarget)
@@ -46,15 +51,35 @@ public class TargetMover_AStar : MonoBehaviour
 
     protected virtual void Start()
     {
-        tilemapGraph = new TilemapGraphNode(tilemap, allowedTiles.Get());
-        timeBetweenSteps = 1 / speed;
+        tilemapGraph = new TilemapGraphNode(tilemap, allowedTiles.Get(), tileDescriptors);
         StartCoroutine(MoveTowardsTheTarget());
     }
 
     IEnumerator MoveTowardsTheTarget()
     {
+        float speedMultiplier = 1;
+
+
         for (; ; )
         {
+            speedMultiplier = 1;
+
+            if (m_nextNode != null)
+            {
+                TileBase currentTile = tilemap.GetTile(m_nextNode.coordinates);
+
+                // lazily find correct tile
+                foreach (TileDescriptor tile in tileDescriptors)
+                {
+                    if (tile.tile == currentTile)
+                    {
+                        speedMultiplier = tile.moveSpeed;
+                    }
+                }
+            }
+
+            timeBetweenSteps = 1 / (speed * speedMultiplier);
+
             yield return new WaitForSeconds(timeBetweenSteps);
             if (enabled && !atTarget)
                 MakeOneStepTowardsTheTarget();
@@ -66,11 +91,11 @@ public class TargetMover_AStar : MonoBehaviour
         Vector3Int startNode = tilemap.WorldToCell(transform.position);
         Vector3Int endNode = targetInGrid;
 
-        if(startNode == endNode){
+        if (startNode == endNode)
+        {
             atTarget = true;
             return;
         }
-
 
         Node startAsNode = new Node(startNode);
         Node endAsNode = new Node(endNode);
@@ -79,8 +104,9 @@ public class TargetMover_AStar : MonoBehaviour
 
         if (shortestPath.Count >= 2)
         {
-            Vector3Int nextNode = shortestPath[shortestPath.Count-2].coordinates;
+            Vector3Int nextNode = shortestPath[shortestPath.Count - 2].coordinates;
             transform.position = tilemap.GetCellCenterWorld(nextNode);
+            m_nextNode = shortestPath[shortestPath.Count - 2];
         }
     }
 }

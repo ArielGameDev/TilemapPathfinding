@@ -12,10 +12,13 @@ public class TilemapGraphNode : IGraph<Node>
     private Tilemap tilemap;
     private TileBase[] allowedTiles;
 
-    public TilemapGraphNode(Tilemap tilemap, TileBase[] allowedTiles)
+    List<TileDescriptor> m_tileDescriptors;
+
+    public TilemapGraphNode(Tilemap tilemap, TileBase[] allowedTiles, List<TileDescriptor> tileDescriptors)
     {
         this.tilemap = tilemap;
         this.allowedTiles = allowedTiles;
+        m_tileDescriptors = tileDescriptors;
     }
 
     static Vector3Int[] directions = {
@@ -33,6 +36,17 @@ public class TilemapGraphNode : IGraph<Node>
             TileBase neighborTile = tilemap.GetTile(neighborPos);
 
             Node newNode = new Node(neighborPos);
+
+
+            TileBase currentTile = tilemap.GetTile(neighborPos);
+            
+            // lazily find correct tile
+            foreach (TileDescriptor tile in m_tileDescriptors)
+            {
+                if (tile.tile == currentTile)
+                    newNode.travelWeight = 1/tile.moveSpeed;
+            }
+
 
             if (allowedTiles.Contains(neighborTile))
                 yield return newNode;
