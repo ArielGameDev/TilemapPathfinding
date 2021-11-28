@@ -2,16 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using AStarTools;
 
 /**
  * A graph that represents a tilemap, using only the allowed tiles.
  */
-public class TilemapGraph : IGraph<Vector3Int>
+public class TilemapGraphNode : IGraph<Node>
 {
     private Tilemap tilemap;
     private TileBase[] allowedTiles;
 
-    public TilemapGraph(Tilemap tilemap, TileBase[] allowedTiles)
+    public TilemapGraphNode(Tilemap tilemap, TileBase[] allowedTiles)
     {
         this.tilemap = tilemap;
         this.allowedTiles = allowedTiles;
@@ -24,14 +25,17 @@ public class TilemapGraph : IGraph<Vector3Int>
             new Vector3Int(0, 1, 0),
     };
 
-    public IEnumerable<Vector3Int> Neighbors(Vector3Int node)
+    public IEnumerable<Node> Neighbors(Node node)
     {
         foreach (var direction in directions)
         {
-            Vector3Int neighborPos = node + direction;
+            Vector3Int neighborPos = node.coordinates + direction;
             TileBase neighborTile = tilemap.GetTile(neighborPos);
+
+            Node newNode = new Node(neighborPos);
+
             if (allowedTiles.Contains(neighborTile))
-                yield return neighborPos;
+                yield return newNode;
         }
     }
 
