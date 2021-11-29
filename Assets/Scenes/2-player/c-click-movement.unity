@@ -357,6 +357,7 @@ Transform:
   m_Children:
   - {fileID: 931517248}
   - {fileID: 73550132}
+  - {fileID: 922476264}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -373,6 +374,7 @@ GameObject:
   - component: {fileID: 790962206}
   - component: {fileID: 790962202}
   - component: {fileID: 790962203}
+  - component: {fileID: 790962204}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -490,7 +492,7 @@ MonoBehaviour:
     moveSpeed: 0.5
   - tile: {fileID: 11400000, guid: 8f2cab6dea1a2d147b231cc92eb1f7e2, type: 2}
     moveSpeed: 0.25
---- !u!114 &790962206
+--- !u!114 &790962204
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -499,11 +501,75 @@ MonoBehaviour:
   m_GameObject: {fileID: 790962199}
   m_Enabled: 1
   m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74d93fbe9bd552a46929db847eb422a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  carvingKey: 120
+  tilemap: {fileID: 931517250}
+  changeToTile: {fileID: 11400000, guid: 149fb7c95775bc842bc8f54055585274, type: 2}
+  allowedCarvingTiles: {fileID: 922476265}
+  carvingSprite: {fileID: -853444905371984434, guid: 0958ae8472e8df2449fefebb187038bd,
+    type: 3}
+  time: 1
+--- !u!114 &790962206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 790962199}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a4eb7d9a315cea645a998e90834ca05c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   tilemap: {fileID: 931517250}
   allowedTiles: {fileID: 73550133}
+--- !u!1 &922476263
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 922476264}
+  - component: {fileID: 922476265}
+  m_Layer: 0
+  m_Name: AllowedCarvingTiles
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &922476264
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 922476263}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 536966466}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &922476265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 922476263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05d99cbc1961e874b8f1db2ced7a8617, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  allowedCarvingTiles:
+  - {fileID: 11400000, guid: 546c35550ead79941af5f505fdd175ec, type: 2}
 --- !u!1 &931517247
 GameObject:
   m_ObjectHideFlags: 0

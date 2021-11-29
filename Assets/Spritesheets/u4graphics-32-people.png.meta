@@ -53,6 +53,9 @@ TextureImporter:
   - first:
       213: -8330961796592777713
     second: u4graphics-32-people_16
+  - first:
+      213: 8826550645256138194
+    second: u4graphics-32-people_17
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -74,6 +77,7 @@ TextureImporter:
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -105,9 +109,12 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
   applyGammaDecoding: 0
   platformSettings:
   - serializedVersion: 3
@@ -146,6 +153,18 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -154,7 +173,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 513
+        y: 545
         width: 32
         height: 32
       alignment: 0
@@ -175,7 +194,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 481
+        y: 513
         width: 32
         height: 32
       alignment: 0
@@ -196,7 +215,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 449
+        y: 481
         width: 32
         height: 32
       alignment: 0
@@ -217,7 +236,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 417
+        y: 449
         width: 32
         height: 32
       alignment: 0
@@ -238,7 +257,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 385
+        y: 417
         width: 32
         height: 32
       alignment: 0
@@ -259,7 +278,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 353
+        y: 385
         width: 32
         height: 32
       alignment: 0
@@ -280,7 +299,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 321
+        y: 353
         width: 32
         height: 32
       alignment: 0
@@ -301,7 +320,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 289
+        y: 321
         width: 32
         height: 32
       alignment: 0
@@ -322,7 +341,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 257
+        y: 289
         width: 32
         height: 32
       alignment: 0
@@ -343,7 +362,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 225
+        y: 257
         width: 32
         height: 32
       alignment: 0
@@ -364,7 +383,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 193
+        y: 225
         width: 32
         height: 32
       alignment: 0
@@ -385,7 +404,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 161
+        y: 193
         width: 32
         height: 32
       alignment: 0
@@ -406,7 +425,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 129
+        y: 161
         width: 32
         height: 32
       alignment: 0
@@ -427,7 +446,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 97
+        y: 129
         width: 32
         height: 32
       alignment: 0
@@ -448,7 +467,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 65
+        y: 97
         width: 32
         height: 32
       alignment: 0
@@ -469,7 +488,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 33
+        y: 65
         width: 32
         height: 32
       alignment: 0
@@ -490,7 +509,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 1
+        y: 33
         width: 32
         height: 32
       alignment: 0
@@ -502,6 +521,27 @@ TextureImporter:
       bones: []
       spriteID: f06ccb4a26a726c80800000000000000
       internalID: -8330961796592777713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: u4graphics-32-people_17
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ddac7afb053e7a70800000000000000
+      internalID: 8826550645256138194
       vertices: []
       indices: 
       edges: []
