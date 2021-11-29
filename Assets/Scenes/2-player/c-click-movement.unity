@@ -504,11 +504,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74d93fbe9bd552a46929db847eb422a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  carvingKey: 120
+  quarryingKey: 120
   tilemap: {fileID: 931517250}
   changeToTile: {fileID: 11400000, guid: 149fb7c95775bc842bc8f54055585274, type: 2}
-  allowedCarvingTiles: {fileID: 922476265}
-  carvingSprite: {fileID: -853444905371984434, guid: 0958ae8472e8df2449fefebb187038bd,
+  allowedQuarryingTiles: {fileID: 922476265}
+  quarryingSprite: {fileID: -853444905371984434, guid: 0958ae8472e8df2449fefebb187038bd,
     type: 3}
   time: 1
 --- !u!114 &790962206
@@ -536,7 +536,7 @@ GameObject:
   - component: {fileID: 922476264}
   - component: {fileID: 922476265}
   m_Layer: 0
-  m_Name: AllowedCarvingTiles
+  m_Name: AllowedQuarryingTiles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -568,7 +568,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05d99cbc1961e874b8f1db2ced7a8617, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  allowedCarvingTiles:
+  allowedQuarryingTiles:
   - {fileID: 11400000, guid: 546c35550ead79941af5f505fdd175ec, type: 2}
 --- !u!1 &931517247
 GameObject:
