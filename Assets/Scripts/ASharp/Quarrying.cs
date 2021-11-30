@@ -9,7 +9,7 @@ public class Quarrying : MonoBehaviour
     [SerializeField] private TileBase changeToTile;
     [SerializeField] private AllowedQuarryingTiles allowedQuarryingTiles;
     [SerializeField] private Sprite quarryingSprite;
-    [SerializeField] private float time = 1f;
+    [SerializeField] private float time = .75f;
     private SpriteRenderer spriteRenderer;
     private Sprite startingSprite;
     private enum Direction { up, down, right, left , zero }

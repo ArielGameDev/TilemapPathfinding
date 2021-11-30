@@ -501,7 +501,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 790962199}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74d93fbe9bd552a46929db847eb422a8, type: 3}
+  m_Script: {fileID: 11500000, guid: f31235a92ccf87d41939ea1fdd8e8d10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   quarryingKey: 120
@@ -510,7 +510,7 @@ MonoBehaviour:
   allowedQuarryingTiles: {fileID: 922476265}
   quarryingSprite: {fileID: -853444905371984434, guid: 0958ae8472e8df2449fefebb187038bd,
     type: 3}
-  time: 1
+  time: 0.75
 --- !u!114 &790962206
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -565,7 +565,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 922476263}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05d99cbc1961e874b8f1db2ced7a8617, type: 3}
+  m_Script: {fileID: 11500000, guid: 3d2afd7f5a87ab1458eb978149480770, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   allowedQuarryingTiles:
