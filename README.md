@@ -1,3 +1,22 @@
+
+## itch.io links:
+[A-star Algorithm + Walking speed + Quarrying -> itch.io](https://arielgamedev.itch.io/ex7)
+
+[Map Generator -> itch.io](https://arielgamedev.itch.io/ex7-mapgenerator)
+
+## The changes are:
+
+* A-star Algorithm 
+    * [AStar.cs](https://github.com/ArielGameDev/TilemapPathfinding/blob/master/Assets/Scripts/ASharp/AStar.cs)
+    * [ClickMover_AStar.cs](https://github.com/ArielGameDev/TilemapPathfinding/blob/master/Assets/Scripts/ASharp/ClickMover_AStar.cs)
+* Quarrying 
+    * [Qurrying.cs](https://github.com/ArielGameDev/TilemapPathfinding/blob/master/Assets/Scripts/ASharp/Quarrying.cs)
+    * [AllowedQuarryingTiles.cs](https://github.com/ArielGameDev/TilemapPathfinding/blob/master/Assets/Scripts/ASharp/AllowedQuarryingTiles.cs) 
+* Map Generator
+    * [CaveGenerator.cs](https://github.com/ArielGameDev/TilemapPathfinding/blob/master/Assets/Scripts/4-generation/CaveGenerator.cs)
+    * [TilemapCaveGenerator.cs ](https://github.com/ArielGameDev/TilemapPathfinding/blob/master/Assets/Scripts/4-generation/TilemapCaveGenerator.cs)
+* Walking Speed
+
 # Unity week 5: Two-dimensional scene-building and path-finding
 
 A project with step-by-step scenes illustrating how to construct a 2D scene using tilemaps,
