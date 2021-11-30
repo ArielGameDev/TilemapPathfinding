@@ -29,7 +29,7 @@ public class CaveGenerator {
 
     private Random random;
 
-    public CaveGenerator(float randomFillPercent=0.5f, int gridSize=100) {
+    public CaveGenerator(float randomFillPercent=0.3f, int gridSize=100) {
         this.randomFillPercent = randomFillPercent;
         this.gridSize = gridSize;
 
@@ -58,7 +58,9 @@ public class CaveGenerator {
                     bufferOld[x, y] = 1;
                 } else {
                     //Random walls and caves
-                    bufferOld[x, y] = random.NextDouble() < randomFillPercent ? 1 : 0;
+                    //bufferOld[x, y] = random.NextDouble() < randomFillPercent ? 1 : 0;
+
+                    bufferOld[x, y] = random.Next(0, 3);
                 }
             }
         }
@@ -79,16 +81,34 @@ public class CaveGenerator {
                 }
 
                 //Uses bufferOld to get the wall count
-                int surroundingWalls = GetSurroundingWallCount(x, y);
+                int[] surroundingWalls = GetSurroundingWallCount(x, y);
 
                 //Use some smoothing rules to generate caves
-                if (surroundingWalls > 4) {
-                    bufferNew[x, y] = 1;
-                } else if (surroundingWalls == 4) {
-                    bufferNew[x, y] = bufferOld[x, y];
-                } else {
+                if (surroundingWalls[0] > 4)
+                {
                     bufferNew[x, y] = 0;
                 }
+                else if (surroundingWalls[0] == 4)
+                {
+                    bufferNew[x, y] = bufferOld[x, y];
+                }
+                if (surroundingWalls[1] > 4)
+                {
+                    bufferNew[x, y] = 1;
+                }
+                else if (surroundingWalls[1] == 4)
+                {
+                    bufferNew[x, y] = bufferOld[x, y];
+                }
+                if (surroundingWalls[2] > 4)
+                {
+                    bufferNew[x, y] = 2;
+                }
+                else if (surroundingWalls[2] == 4)
+                {
+                    bufferNew[x, y] = bufferOld[x, y];
+                }
+                
             }
         }
 
@@ -99,8 +119,9 @@ public class CaveGenerator {
 
 
     //Given a cell, how many of the 8 surrounding cells are walls?
-    private int GetSurroundingWallCount(int cellX, int cellY) {
-        int wallCounter = 0;
+    private int[] GetSurroundingWallCount(int cellX, int cellY) {
+        int[] counter = { 0, 0, 0 };
+        //int wallCounter = 0;
         for (int neighborX = cellX - 1; neighborX <= cellX + 1; neighborX ++) {
             for (int neighborY = cellY - 1; neighborY <= cellY + 1; neighborY++) {
                 //We dont need to care about being outside of the grid because we are never looking at the border
@@ -109,11 +130,20 @@ public class CaveGenerator {
                 }
 
                 //This neighbor is a wall
-                if (bufferOld[neighborX, neighborY] == 1) {
-                    wallCounter += 1;
+                if (bufferOld[neighborX, neighborY] == 0)
+                {
+                    counter[0] += 1;
+                }
+                if (bufferOld[neighborX, neighborY] == 1)
+                {
+                    counter[1] += 1;
+                }
+                if (bufferOld[neighborX, neighborY] == 2)
+                {
+                    counter[2] += 1;
                 }
             }
         }
-        return wallCounter;
+        return counter;
     }
 }
