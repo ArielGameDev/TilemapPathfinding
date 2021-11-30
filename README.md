@@ -6,16 +6,19 @@
 
 ## The changes are:
 
-* A-star Algorithm 
+* AStar Algorithm - movement on mouse click.
     * [AStar.cs](https://github.com/ArielGameDev/TilemapPathfinding/blob/master/Assets/Scripts/ASharp/AStar.cs)
     * [ClickMover_AStar.cs](https://github.com/ArielGameDev/TilemapPathfinding/blob/master/Assets/Scripts/ASharp/ClickMover_AStar.cs)
-* Quarrying 
+* Quarrying - press and hold the keyboard arrows (for direction) and press x (for quarrying).
     * [Qurrying.cs](https://github.com/ArielGameDev/TilemapPathfinding/blob/master/Assets/Scripts/ASharp/Quarrying.cs)
     * [AllowedQuarryingTiles.cs](https://github.com/ArielGameDev/TilemapPathfinding/blob/master/Assets/Scripts/ASharp/AllowedQuarryingTiles.cs) 
 * Map Generator
     * [CaveGenerator.cs](https://github.com/ArielGameDev/TilemapPathfinding/blob/master/Assets/Scripts/4-generation/CaveGenerator.cs)
     * [TilemapCaveGenerator.cs ](https://github.com/ArielGameDev/TilemapPathfinding/blob/master/Assets/Scripts/4-generation/TilemapCaveGenerator.cs)
 * Walking Speed
+   * [TargetMover_AStar.cs](https://github.com/ArielGameDev/TilemapPathfinding/blob/master/Assets/Scripts/ASharp/TargetMover_AStar.cs)
+   * [TileDescriptor.cs](https://github.com/ArielGameDev/TilemapPathfinding/blob/master/Assets/Scripts/ASharp/TileDescriptor.cs)
+   
 
 # Unity week 5: Two-dimensional scene-building and path-finding
 
